@@ -1,0 +1,137 @@
+<html>
+<head>
+<title>计算器</title>
+<script type="text/javascript">
+var b=0;
+var c=0;
+var d=0;
+var e=0;
+var result1=0;
+var result2=0;
+var result=0;
+function shuzhi(a) {
+	if (e == 0)
+		b = b + a * (Math.pow(0.1, d));
+	else
+		b = b - a * (Math.pow(0.1, d));
+	if(c==0)
+		result1 = b;
+	else
+		result2=b;
+	switch (d) {
+		case 0:
+			document.getElementById("output").innerHTML = a;
+			break;
+		default:
+			document.getElementById("output").innerHTML = b;
+			d = d + 1;
+			break;
+	}
+}
+function jia() {
+	c = 1;
+	b=0;
+	d=0;
+	e=0;
+}
+function jian() {
+	c = 2;
+	b=0;
+	d=0;
+	e=0;
+}
+function cheng() {
+	c = 3;
+	b=0;
+	d=0;
+	e=0;
+}
+function chu() {
+	c = 4;
+	b=0;
+	d=0;
+	e=0;
+}
+function dengyu() {
+	switch(c) {
+		case 1:result=result1+result2;
+			break;
+		case 2:result=result1-result2;
+			break;
+		case 3:result=result1*result2;
+			break;
+		case 4:result=result1/result2;
+			break;
+	}
+	document.getElementById("output").innerHTML = result;
+	b=0;
+	c=0;
+	d=0;
+	e=0;
+}
+function xsd() {
+	d = d + 1;
+}
+function fh(){
+	e=1;
+	b=b*(-1);
+	document.getElementById("output").innerHTML = b;
+}
+</script>
+<style type="text/css">
+.shuchu{
+	display:inline-block;
+	width:73%;
+	height:20%;
+	background-color:white;
+	font-size:150px;
+}
+.denghao{
+	display:inline-block;
+	width:23%;
+	height:20%;
+	background-color:blue;
+	font-size:150px;
+}
+.shuzi{
+	display:inline-block;
+	width:24%;
+	height:20%;
+	background-color:gray;
+	font-size:100px;
+}
+.fuhao {
+	display: inline-block;
+	width: 24%;
+	height: 20%;
+	background-color: red;
+	font-size: 100px;
+}
+</style>
+</head>
+<body>
+<span class="shuchu" id="output"></span>
+<button type="button" class="denghao" onclick="dengyu()">=</button>
+<div></div>
+<button type="button" class="shuzi" onclick="shuzhi(1)">1</button>
+<button type="button" class="shuzi" onclick="shuzhi(2)">2</button>
+<button type="button" class="shuzi" onclick="shuzhi(3)">3</button>
+<button type="button" class="fuhao" onclick="jia()">+</button>
+<div></div>
+<button type="button" class="shuzi" onclick="shuzhi(4)">4</button>
+<button type="button" class="shuzi" onclick="shuzhi(5)">5</button>
+<button type="button" class="shuzi" onclick="shuzhi(6)">6</button>
+<button type="button" class="fuhao" onclick="jian()">-</button>
+<div></div>
+<button type="button" class="shuzi" onclick="shuzhi(7)">7</button>
+<button type="button" class="shuzi" onclick="shuzhi(8)">8</button>
+<button type="button" class="shuzi" onclick="shuzhi(9)">9</button>
+<button type="button" class="fuhao" onclick="cheng()">*</button>
+<div></div>
+<button type="button" class="shuzi" onclick="xsd()">.</button>
+<button type="button" class="shuzi" onclick="shuzhi(0)">0</button>
+<button type="button" class="shuzi" onclick="fh()">-</button>
+<button type="button" class="fuhao" onclick="chu()">/</button>
+<div></div>
+</body>
+</html>
